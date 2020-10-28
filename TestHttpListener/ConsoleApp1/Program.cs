@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading;
 using System.Xml;
+///using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace TestHttpListener
 {
@@ -63,7 +66,9 @@ namespace TestHttpListener
 						{
 							var answerText = new StringBuilder();
 							answerText.Append(reader.ReadToEnd());
-							Console.WriteLine(answerText);
+							var motionState = JsonSerializer.Deserialize<Test>(answerText.ToString());
+							Console.WriteLine(motionState.motion);
+							Console.WriteLine(motionState.videoChannelId);
 							response.Close();
 						}
 						listener.Stop();
@@ -73,7 +78,7 @@ namespace TestHttpListener
 			catch(Exception ex)
 			{
 				Console.WriteLine(ex.Message);
-				Console.WriteLine("Нажмите Enter для переподключения к Автомаршалу");
+				Console.WriteLine("Press Enter for reconnection.");
 			}
 		}
 
@@ -92,5 +97,12 @@ namespace TestHttpListener
 				}
 			}).Start();
 		}
+	}
+
+	public class Test
+	{
+		public bool motion { get; set; }
+		
+		public int videoChannelId { get; set; }
 	}
 }
