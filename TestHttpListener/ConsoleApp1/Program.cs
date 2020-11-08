@@ -17,6 +17,8 @@ namespace TestHttpListener
 		{
 			@"http://127.0.0.1:47777/recognition/",
 			@"http://127.0.0.1:47777/motion/",
+			@"http://127.0.0.1:47777/api/rest/medium/ticket/discount/lp/",
+			@"http://127.0.0.1:47777/api/rest/medium/changezone/lp/"
 		};
 
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -66,9 +68,13 @@ namespace TestHttpListener
 						{
 							var answerText = new StringBuilder();
 							answerText.Append(reader.ReadToEnd());
-							var motionState = JsonSerializer.Deserialize<Test>(answerText.ToString());
-							Console.WriteLine(motionState.motion);
-							Console.WriteLine(motionState.videoChannelId);
+							//var motionState = JsonSerializer.Deserialize<Test>(answerText.ToString());
+							//Console.WriteLine(motionState.motion);
+							//Console.WriteLine(motionState.videoChannelId);
+							Console.Write(DateTime.Now.ToString("HH:mm:ss"));
+							Console.Write(request.Url.AbsolutePath);
+							Console.Write(answerText);
+							Console.WriteLine();
 							response.Close();
 						}
 						listener.Stop();
