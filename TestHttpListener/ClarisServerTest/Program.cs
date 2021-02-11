@@ -6,21 +6,35 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading;
 using System.Xml;
-///using Newtonsoft.Json;
-using System.Text.Json;
+using //Newtonsoft.Json;
+using Newtonsoft.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace TestHttpListener
+namespace ClarisServerTest
 {
-	public class Program
+	class Program
 	{
-		public static IReadOnlyList<string> _prefixes =  new List<string>()
+		private static List<ClarisAnswer> _clarisPasses = new List<ClarisAnswer>()
+		{
+			new ClarisAnswer("123456", "BMW", "10", "Driver01", DateTime.Now, DateTime.Now),
+			new ClarisAnswer("123457", "BMW", "11", "Driver02", DateTime.Now, DateTime.Now),
+			new ClarisAnswer("123458", "BMW", "12", "Driver03", DateTime.Now, DateTime.Now),
+			new ClarisAnswer("123459", "BMW", "13", "Driver04", DateTime.Now, DateTime.Now),
+			new ClarisAnswer("1234510", "BMW", "14", "Driver05", DateTime.Now, DateTime.Now),
+			new ClarisAnswer("1234511", "BMW", "15", "Driver06", DateTime.Now, DateTime.Now),
+			new ClarisAnswer("1234512", "BMW", "16", "Driver07", DateTime.Now, DateTime.Now),
+			new ClarisAnswer("1234513", "BMW", "17", "Driver08", DateTime.Now, DateTime.Now),
+		};
+
+		public static IReadOnlyList<string> _prefixes = new List<string>()
 		{
 			@"http://127.0.0.1:47777/recognition/",
 			@"http://127.0.0.1:47777/motion/",
 			@"http://127.0.0.1:47777/cgi/",
 			@"http://127.0.0.1:47777/",
 			@"http://127.0.0.1:47777/api/rest/medium/ticket/discount/lp/",
-			@"http://127.0.0.1:47777/api/rest/medium/changezone/lp/"
+			@"http://127.0.0.1:47777/api/rest/medium/changezone/lp/",
+			@"http://127.0.0.1:47777/vNext/v1/"
 		};
 
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -31,7 +45,7 @@ namespace TestHttpListener
 			{
 				Console.WriteLine("Get request " + prefix);
 			}
-			
+
 			do
 			{
 				StartReceive(_prefixes);
@@ -63,9 +77,9 @@ namespace TestHttpListener
 						}
 
 						listener.Start();
-						var context      = listener.GetContext();
-						var request      = context.Request;
-						
+						var context = listener.GetContext();
+						var request = context.Request;
+
 						foreach(var keys in request.QueryString.AllKeys)
 						{
 							Console.WriteLine(keys + "= " + request.QueryString[keys]);
@@ -73,15 +87,22 @@ namespace TestHttpListener
 						using(var response = context.Response)
 						using(var reader = new StreamReader(request.InputStream))
 						{
-							var answerText = new StringBuilder();
-							answerText.Append(reader.ReadToEnd());
+							var body = new StringBuilder();
+							body.Append(reader.ReadToEnd());
 							//var motionState = JsonSerializer.Deserialize<Test>(answerText.ToString());
 							//Console.WriteLine(motionState.motion);
 							//Console.WriteLine(motionState.videoChannelId);
 							Console.Write(DateTime.Now.ToString("HH:mm:ss"));
 							Console.Write(request.Url.AbsolutePath);
-							Console.Write(answerText);
+							Console.Write(body);
 							Console.WriteLine();
+
+							using(var sw = new StreamWriter(response.OutputStream))
+							{
+								var json = JsonConvert.SerializeObject(_clarisPasses);
+								sw.Write(json);
+							}
+							response.StatusCode = (int)HttpStatusCode.OK;
 							response.Close();
 						}
 						listener.Stop();
@@ -110,12 +131,5 @@ namespace TestHttpListener
 				}
 			}).Start();
 		}
-	}
-
-	public class Test
-	{
-		public bool motion { get; set; }
-		
-		public int videoChannelId { get; set; }
 	}
 }
