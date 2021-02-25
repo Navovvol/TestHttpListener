@@ -20,7 +20,10 @@ namespace TestHttpListener
 			@"http://127.0.0.1:47777/cgi/",
 			@"http://127.0.0.1:47777/",
 			@"http://127.0.0.1:47777/api/rest/medium/ticket/discount/lp/",
-			@"http://127.0.0.1:47777/api/rest/medium/changezone/lp/"
+			@"http://127.0.0.1:47777/api/rest/medium/changezone/lp/",
+			@"http://192.168.10.139:2022/",
+			@"http://127.0.0.1:2022/",
+			@"http://localhost/V8_TEST_DULICH_PR_CHERNOZEM_BUH/ru_RU/hs/chernozem_web/SetCar/",
 		};
 
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -73,15 +76,21 @@ namespace TestHttpListener
 						using(var response = context.Response)
 						using(var reader = new StreamReader(request.InputStream))
 						{
-							var answerText = new StringBuilder();
-							answerText.Append(reader.ReadToEnd());
+							var body = new StringBuilder();
+							body.Append(reader.ReadToEnd());
 							//var motionState = JsonSerializer.Deserialize<Test>(answerText.ToString());
 							//Console.WriteLine(motionState.motion);
 							//Console.WriteLine(motionState.videoChannelId);
-							Console.Write(DateTime.Now.ToString("HH:mm:ss"));
-							Console.Write(request.Url.AbsolutePath);
-							Console.Write(answerText);
-							Console.WriteLine();
+							Console.Write(DateTime.Now.ToString("HH:mm:ss  "));
+							Console.Write(request.Url);
+							Console.WriteLine(body);
+							Console.WriteLine("Headers:");
+							foreach(var key in request.Headers.AllKeys)
+							{
+								Console.WriteLine($@"{key}: {request.Headers[key]}");
+							}
+
+							response.StatusCode = 200;
 							response.Close();
 						}
 						listener.Stop();
