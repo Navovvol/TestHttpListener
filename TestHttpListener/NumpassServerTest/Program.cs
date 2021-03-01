@@ -116,7 +116,7 @@ namespace NumpassServerTest
 									var config = new UserConfiguration()
 									{
 										ScaningsInterval = 20,//sec
-										SendPricesInterval = 30,//sec
+										SendPricesInterval = 35,//sec
 										PriceTimeDelta = 300,//min
 									};
 									responseString = JsonConvert.SerializeObject(config);
