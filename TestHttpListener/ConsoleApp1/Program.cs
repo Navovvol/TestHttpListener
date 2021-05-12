@@ -19,7 +19,12 @@ namespace TestHttpListener
 			@"http://127.0.0.1:47777/motion/",
 			@"http://127.0.0.1:47777/api/rest/medium/ticket/discount/lp/",
 			@"http://127.0.0.1:47777/api/rest/medium/changezone/lp/",
-			@"http://127.0.0.1/V8_TEST_DULICH_PR_CHERNOZEM_BUH/ru_RU/"
+			@"http://192.168.10.139:2022/ISAPI/",
+			@"http://192.168.10.139:2022/",
+			@"http://192.168.10.139:2023/ISAPI/",
+			@"http://192.168.10.139:2023/",
+			@"http://127.0.0.1/V8_TEST_DULICH_PR_CHERNOZEM_BUH/ru_RU/",
+			@"http://192.168.10.139/V8_TEST_DULICH_PR_CHERNOZEM_BUH/ru_RU/",
 		};
 
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -82,6 +87,7 @@ namespace TestHttpListener
 								Console.WriteLine(header + ": " + request.Headers[header]);
 							}
 							Console.WriteLine();
+							response.StatusCode = (int)HttpStatusCode.OK;
 							response.Close();
 						}
 						listener.Stop();
