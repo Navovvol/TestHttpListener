@@ -19,12 +19,12 @@ namespace TestHttpListener
 			@"http://127.0.0.1:47777/motion/",
 			@"http://127.0.0.1:47777/api/rest/medium/ticket/discount/lp/",
 			@"http://127.0.0.1:47777/api/rest/medium/changezone/lp/",
-			@"http://192.168.10.139:2022/ISAPI/",
-			@"http://192.168.10.139:2022/",
-			@"http://192.168.10.139:2023/ISAPI/",
-			@"http://192.168.10.139:2023/",
+			@"http://192.168.10.219:2022/ISAPI/",
+			@"http://192.168.10.219:2022/",
+			@"http://192.168.10.219:2023/ISAPI/",
+			@"http://192.168.10.219:2023/",
 			@"http://127.0.0.1/V8_TEST_DULICH_PR_CHERNOZEM_BUH/ru_RU/",
-			@"http://192.168.10.139/V8_TEST_DULICH_PR_CHERNOZEM_BUH/ru_RU/",
+			@"http://192.168.10.219/V8_TEST_DULICH_PR_CHERNOZEM_BUH/ru_RU/",
 		};
 
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -74,9 +74,7 @@ namespace TestHttpListener
 						{
 							var body = new StringBuilder();
 							body.Append(reader.ReadToEnd());
-							//var motionState = JsonSerializer.Deserialize<Test>(answerText.ToString());
-							//Console.WriteLine(motionState.motion);
-							//Console.WriteLine(motionState.videoChannelId);
+							
 							Console.Write(DateTime.Now.ToString("HH:mm:ss"));
 							Console.Write("__");
 							Console.Write(request.Url.ToString());
@@ -87,6 +85,10 @@ namespace TestHttpListener
 								Console.WriteLine(header + ": " + request.Headers[header]);
 							}
 							Console.WriteLine();
+							
+							var record = JsonSerializer.Deserialize<Record>(body.ToString());
+							Console.WriteLine(record);
+							
 							response.StatusCode = (int)HttpStatusCode.OK;
 							response.Close();
 						}
@@ -123,5 +125,35 @@ namespace TestHttpListener
 		public bool motion { get; set; }
 		
 		public int videoChannelId { get; set; }
+	}
+	
+	public class Record
+	{
+		public long id { get; set; }
+		public string plate { get; set; }
+		public string stencil { get; set; }
+		public DateTime timestamp { get; set; }
+		public string time { get; set; }
+		public string date { get; set; }
+		public string chDirection { get; set; }
+		public string movDirection { get; set; }
+		public string nameDir { get; set; }
+		public string status { get; set; }
+		public string userList { get; set; }
+		public string channelName { get; set; }
+		public int channelNum { get; set; }
+		public string dongle { get; set; }
+		public string vehicleType { get; set; }
+		public string duration { get; set; }
+		public string speed { get; set; }
+		public string datetimepassage { get; set; }
+		public string rearplate { get; set; }
+		public string namepassage { get; set; }
+		public string statuspassage { get; set; }
+
+		public override string ToString()
+		{
+			return string.Format(@"{0}	{1}", timestamp.ToString("dd MMMM yyyy hh:mm:ss"), plate);
+		}
 	}
 }
