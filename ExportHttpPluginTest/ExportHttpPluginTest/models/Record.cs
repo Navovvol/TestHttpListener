@@ -6,18 +6,25 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestHttpListener
+namespace ExportHttpPluginTest
 {
-	public class CarRecognizedContext
+	[DataContract]
+	public class CarRecordedContext
 	{
 		[DataMember]
-		[JsonProperty("recordData")]
-		public RecordData? RecordDataContext { get; }
+		[JsonProperty("record")]
+		public Record? RecordContext { get; set; }
 
-		public override string ToString() => JsonConvert.SerializeObject(this);
+		public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
+
 	}
-	public class RecordData
+	[DataContract]
+	public class Record
 	{
+		[DataMember]
+		[JsonProperty("id")]
+		public long Id { get; set; }
+
 		[DataMember]
 		[JsonProperty("timeStamp")]
 		public DateTime TimeStamp { get; set; }
@@ -50,6 +57,26 @@ namespace TestHttpListener
 		[JsonProperty("videoChannelName")]
 		public string VideoChannelName { get; set; }
 
-		public override string ToString() => JsonConvert.SerializeObject(this);
+		[DataMember]
+		[JsonProperty("videoChannelId")]
+		public long VideoChannelId { get; set; }
+
+		[DataMember]
+		[JsonProperty("vehicleDatabaseName")]
+		public string VehicleDatabaseName { get; set; }
+
+		[DataMember]
+		[JsonProperty("serverId")]
+		public long? ServerId { get; set; }
+
+		[DataMember]
+		[JsonProperty("serverGuid")]
+		public Guid? ServerGuid { get; set; }
+
+		[DataMember]
+		[JsonProperty("serverName")]
+		public string ServerName { get; set; }
+
+		public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 }

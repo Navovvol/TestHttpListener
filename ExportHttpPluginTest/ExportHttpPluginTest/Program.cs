@@ -19,6 +19,7 @@ namespace TestHttpListener
 		{
 			@"http://127.0.0.1:47777/recorddata/",
 			@"http://127.0.0.1:47777/record/",
+			@"http://127.0.0.1:47777/movedetected/",
 		};
 
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -70,41 +71,48 @@ namespace TestHttpListener
 							var body = new StringBuilder();
 							body.Append(reader.ReadToEnd());
 							Console.WriteLine();
-							Console.WriteLine();
+							
 							Console.WriteLine("---------BEGIN----------");
 							Console.WriteLine(DateTime.Now.ToString("HH:mm:ss"));
 							Console.WriteLine("---------URL----------");
 							Console.WriteLine(url);
-							Console.WriteLine();
+							
 							Console.WriteLine("---------BODY----------");
 							Console.WriteLine(body);
-							Console.WriteLine();
+							
 							Console.WriteLine("---------HEADERS----------");
 							foreach(var header in request.Headers.AllKeys)
 							{
 								Console.WriteLine(header + ": " + request.Headers[header]);
 							}
-							Console.WriteLine();
+							
 							Console.WriteLine("---------OBJECT----------");
 							switch(request.Url?.AbsolutePath)
 							{
 								case "/record/":
 									if(request.ContentType == "application/json")
 									{
-										var record = JsonConvert.DeserializeObject<CarRecordedContext>(body.ToString());
-										Console.WriteLine(record);
+										var json = JsonConvert.DeserializeObject<CarRecordedContext>(body.ToString());
+										Console.WriteLine(json);
 									}
 									break;
 
 								case "/recorddata/":
 									if(request.ContentType == "application/json")
 									{
-										var recorddata = JsonConvert.DeserializeObject<CarRecognizedContext>(body.ToString());
-										Console.WriteLine(recorddata);
+										var json = JsonConvert.DeserializeObject<CarRecognizedContext>(body.ToString());
+										Console.WriteLine(json);
+									}
+									break;
+								case "/movedetected/":
+									if (request.ContentType == "application/json")
+									{
+										var json = JsonConvert.DeserializeObject<MoveDetected>(body.ToString());
+										Console.WriteLine(json);
 									}
 									break;
 							}
-							Console.WriteLine();
+							
 							Console.WriteLine("---------END----------");
 
 							response.StatusCode = (int)HttpStatusCode.OK;
