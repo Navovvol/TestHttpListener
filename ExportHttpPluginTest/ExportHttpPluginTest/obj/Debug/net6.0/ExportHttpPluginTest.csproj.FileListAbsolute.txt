@@ -1,0 +1,17 @@
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\bin\Debug\net6.0\ExportHttpPluginTest.exe
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\bin\Debug\net6.0\ExportHttpPluginTest.deps.json
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\bin\Debug\net6.0\ExportHttpPluginTest.runtimeconfig.json
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\bin\Debug\net6.0\ExportHttpPluginTest.dll
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\bin\Debug\net6.0\ref\ExportHttpPluginTest.dll
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\bin\Debug\net6.0\ExportHttpPluginTest.pdb
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.csproj.AssemblyReference.cache
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.GeneratedMSBuildEditorConfig.editorconfig
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.AssemblyInfoInputs.cache
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.AssemblyInfo.cs
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.csproj.CoreCompileInputs.cache
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.csproj.CopyComplete
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.dll
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ref\ExportHttpPluginTest.dll
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.pdb
+F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.genruntimeconfig.cache

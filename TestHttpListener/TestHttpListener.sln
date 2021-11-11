@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30104.148
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHttpListener", "ConsoleApp1\TestHttpListener.csproj", "{EB3E7045-BAE1-4953-AAE6-FF32723C089F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestHttpListener", "ConsoleApp1\TestHttpListener.csproj", "{EB3E7045-BAE1-4953-AAE6-FF32723C089F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumpassServerTest", "NumpassServerTest\NumpassServerTest.csproj", "{951A6692-55FE-43B9-A9FD-C25B7F8940D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportHttpPluginTest", "..\ExportHttpPluginTest\ExportHttpPluginTest\ExportHttpPluginTest.csproj", "{CDC41DB9-1796-473A-9540-535901DF6545}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{951A6692-55FE-43B9-A9FD-C25B7F8940D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{951A6692-55FE-43B9-A9FD-C25B7F8940D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{951A6692-55FE-43B9-A9FD-C25B7F8940D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC41DB9-1796-473A-9540-535901DF6545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC41DB9-1796-473A-9540-535901DF6545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC41DB9-1796-473A-9540-535901DF6545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC41DB9-1796-473A-9540-535901DF6545}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
