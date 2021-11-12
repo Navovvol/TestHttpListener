@@ -43,11 +43,11 @@ namespace ExportHttpPluginTest
 
 		[DataMember]
 		[JsonProperty("direction")]
-		public int Direction { get; set; }
+		public string Direction { get; set; }
 
 		[DataMember]
 		[JsonProperty("passage")]
-		public int Passage { get; set; }
+		public string Passage { get; set; }
 
 		[DataMember]
 		[JsonProperty("videoChannel")]
