@@ -14,17 +14,38 @@ namespace TestHttpListener
 		[JsonProperty("recordData")]
 		public RecordData? RecordDataContext { get; set; }
 
+		[DataMember]
+		[JsonProperty("recognizedVehicleType")]
+		public string RecognizedVehicleType { get; set; }
+
+		[DataMember]
+		[JsonProperty("recognizedVehicleSide")]
+		public string RecognizedVehicleSide { get; set; }
+		[DataMember]
+		[JsonProperty("decisionSource")]
+		public string DecisionSource { get; set; }
+
 		public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 	public class RecordData
 	{
 		[DataMember]
-		[JsonProperty("timeStamp")]
-		public DateTime TimeStamp { get; set; }
+		[JsonProperty("bestFrame")]
+		public DateTime BestFrame { get; set; }
+		[DataMember]
+		[JsonProperty("firstFrame")]
+		public DateTime FirstFrame { get; set; }
+		[DataMember]
+		[JsonProperty("lastFrame")]
+		public DateTime LastFrame { get; set; }
 
 		[DataMember]
 		[JsonProperty("plate")]
 		public string Plate { get; set; }
+
+		[DataMember]
+		[JsonProperty("estimate")]
+		public double Estimate { get; set; }
 
 		[DataMember]
 		[JsonProperty("plateStencil")]
@@ -36,19 +57,26 @@ namespace TestHttpListener
 
 		[DataMember]
 		[JsonProperty("direction")]
-		public int Direction { get; set; }
+		public string Direction { get; set; }
 
 		[DataMember]
 		[JsonProperty("passage")]
-		public int Passage { get; set; }
+		public string Passage { get; set; }
 
 		[DataMember]
-		[JsonProperty("videoChannel")]
-		public int VideoChannel { get; set; }
+		[JsonProperty("videoChannelOrderId")]
+		public int VideoChannelOrderId { get; set; }
 
 		[DataMember]
 		[JsonProperty("videoChannelName")]
 		public string VideoChannelName { get; set; }
+
+		[DataMember]
+		[JsonProperty("speed")]
+		public float? Speed { get; set; }
+		[DataMember]
+		[JsonProperty("flags")]
+		public string Flags { get; set; }
 
 		public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
 	}

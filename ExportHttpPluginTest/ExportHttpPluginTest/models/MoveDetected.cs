@@ -10,7 +10,7 @@ namespace ExportHttpPluginTest
 {
 	[DataContract]
 	public class MoveDetected
-    {
+	{
 		[DataMember]
 		[JsonProperty("videoChannelId")]
 		public int VideoChannelId { get; set; }
