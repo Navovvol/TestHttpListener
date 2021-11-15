@@ -26,7 +26,7 @@ namespace ExportHttpPluginTest
 		public long Id { get; set; }
 
 		[DataMember]
-		[JsonProperty("timeStamp")]
+		[JsonProperty("timestamp")]
 		public DateTime TimeStamp { get; set; }
 
 		[DataMember]

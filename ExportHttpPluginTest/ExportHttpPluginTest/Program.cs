@@ -20,6 +20,8 @@ namespace TestHttpListener
 			@"http://127.0.0.1:47777/recorddata/",
 			@"http://127.0.0.1:47777/record/",
 			@"http://127.0.0.1:47777/movedetected/",
+			@"http://127.0.0.1:47777/videosignal/",
+			@"http://127.0.0.1:47777/rfid/",
 		};
 
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -108,6 +110,20 @@ namespace TestHttpListener
 									if (request.ContentType == "application/json")
 									{
 										var json = JsonConvert.DeserializeObject<MoveDetected>(body.ToString());
+										Console.WriteLine(json);
+									}
+									break;
+								case "/videosignal/":
+									if(request.ContentType == "application/json")
+									{
+										var json = JsonConvert.DeserializeObject<VideoSignalStateContext>(body.ToString());
+										Console.WriteLine(json);
+									}
+									break;
+								case "/rfid/":
+									if(request.ContentType == "application/json")
+									{
+										var json = JsonConvert.DeserializeObject<RFIDReader>(body.ToString());
 										Console.WriteLine(json);
 									}
 									break;

@@ -3,13 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ExportHttpPluginTest
+namespace TestHttpListener
 {
-	[DataContract]
-	public class MoveDetected
+	public class VideoSignalStateContext
 	{
 		[DataMember]
 		[JsonProperty("videoChannelOrderId")]
@@ -20,12 +17,12 @@ namespace ExportHttpPluginTest
 		public string VideoChannelName { get; set; }
 
 		[DataMember]
-		[JsonProperty("hasMotion")]
-		public bool HasMotion { get; set; }
+		[JsonProperty("timestamp")]
+		public DateTime Timestamp { get; set; }
 
 		[DataMember]
-		[JsonProperty("timestamp")]
-		public DateTime DateTime { get; set; }
+		[JsonProperty("videoSignalState")]
+		public string VideoSignalState { get; set; }
 
 		public override string ToString() => JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
