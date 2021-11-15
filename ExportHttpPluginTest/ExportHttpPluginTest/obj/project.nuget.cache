@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6dnP13orh0ZlrE41kZXvKbRuB5I55r5yM3LHj/uWVEbjmxAlN5HbuzAW3akrAwxDNMx3P47T/S6muWzmNy7ovg==",
+  "dgSpecHash": "3VEPm60PU78JzjC5E9JFbDwWy8EgvKAC74Haa+Pw7bPButDGbutSCtdflOs57935+v4jHdKrzTZbvj2PeTuv3w==",
   "success": true,
-  "projectFilePath": "D:\\__repository\\navovvol.TestHttpListener\\ExportHttpPluginTest\\ExportHttpPluginTest\\ExportHttpPluginTest.csproj",
+  "projectFilePath": "F:\\_repository\\TestHttpListener\\ExportHttpPluginTest\\ExportHttpPluginTest\\ExportHttpPluginTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
