@@ -7,8 +7,6 @@ F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\bin\De
 F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\bin\Debug\net6.0\Newtonsoft.Json.dll
 F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.csproj.AssemblyReference.cache
 F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.GeneratedMSBuildEditorConfig.editorconfig
-F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.AssemblyInfoInputs.cache
-F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.AssemblyInfo.cs
 F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.csproj.CoreCompileInputs.cache
 F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.csproj.CopyComplete
 F:\_repository\TestHttpListener\ExportHttpPluginTest\ExportHttpPluginTest\obj\Debug\net6.0\ExportHttpPluginTest.dll
