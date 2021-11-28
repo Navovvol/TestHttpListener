@@ -74,7 +74,7 @@
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\User\\.nugetlocal": {},
         "http://nuget.mallenom.ru:3645/nuget/mallenom/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
