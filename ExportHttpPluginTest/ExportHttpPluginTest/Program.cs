@@ -24,6 +24,7 @@ namespace TestHttpListener
 			@"http://127.0.0.1:47777/rfid/",
 			@"http://127.0.0.1:47777/httpresponce/",
 			@"http://127.0.0.1:47777/frontrearplate/",
+			@"http://127.0.0.1:47777/cardread/",
 		};
 
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -140,6 +141,13 @@ namespace TestHttpListener
 									if(request.ContentType == "application/json")
 									{
 										var json = JsonConvert.DeserializeObject<RearFrontPlateContext>(body.ToString());
+										Console.WriteLine(json);
+									}
+									break;
+								case "/cardread/":
+									if(request.ContentType == "application/json")
+									{
+										var json = JsonConvert.DeserializeObject<CardRead>(body.ToString());
 										Console.WriteLine(json);
 									}
 									break;
