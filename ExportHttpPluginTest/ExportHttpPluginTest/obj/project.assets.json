@@ -49,29 +49,32 @@
   },
   "packageFolders": {
     "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\__repository\\navovvol.TestHttpListener\\ExportHttpPluginTest\\ExportHttpPluginTest\\ExportHttpPluginTest.csproj",
+      "projectUniqueName": "F:\\_repository\\TestHttpListener\\ExportHttpPluginTest\\ExportHttpPluginTest\\ExportHttpPluginTest.csproj",
       "projectName": "ExportHttpPluginTest",
-      "projectPath": "D:\\__repository\\navovvol.TestHttpListener\\ExportHttpPluginTest\\ExportHttpPluginTest\\ExportHttpPluginTest.csproj",
+      "projectPath": "F:\\_repository\\TestHttpListener\\ExportHttpPluginTest\\ExportHttpPluginTest\\ExportHttpPluginTest.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\__repository\\navovvol.TestHttpListener\\ExportHttpPluginTest\\ExportHttpPluginTest\\obj\\",
+      "outputPath": "F:\\_repository\\TestHttpListener\\ExportHttpPluginTest\\ExportHttpPluginTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\User\\.nugetlocal": {},
         "http://nuget.mallenom.ru:3645/nuget/mallenom/": {},
         "https://api.nuget.org/v3/index.json": {}
       },
