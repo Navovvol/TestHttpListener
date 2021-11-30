@@ -25,6 +25,7 @@ namespace TestHttpListener
 			@"http://127.0.0.1:47777/httpresponce/",
 			@"http://127.0.0.1:47777/frontrearplate/",
 			@"http://127.0.0.1:47777/cardread/",
+			@"http://127.0.0.1:47777/zone/",
 		};
 
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
