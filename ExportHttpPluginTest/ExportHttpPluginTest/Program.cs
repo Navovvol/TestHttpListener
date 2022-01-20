@@ -27,6 +27,9 @@ namespace TestHttpListener
 			@"http://127.0.0.1:47777/cardread/",
 			@"http://127.0.0.1:47777/zone/",
 			@"http://127.0.0.1:47777/operator/",
+			@"http://127.0.0.1:47777/claris/",
+			@"http://127.0.0.1:47777/numpass/",
+			@"http://127.0.0.1:47777/duration/",
 		};
 
 		static readonly CancellationTokenSource cts = new CancellationTokenSource();
@@ -167,6 +170,28 @@ namespace TestHttpListener
 										Console.WriteLine(json);
 									}
 									break;
+								case "/claris/":
+									if(request.ContentType == "application/json")
+									{
+										var json = JsonConvert.DeserializeObject<ClarisContext>(body.ToString());
+										Console.WriteLine(json);
+									}
+									break;
+								case "/numpass/":
+									if(request.ContentType == "application/json")
+									{
+										var json = JsonConvert.DeserializeObject<NumpassContext>(body.ToString());
+										Console.WriteLine(json);
+									}
+									break;
+								case "/duration/":
+									if(request.ContentType == "application/json")
+									{
+										var json = JsonConvert.DeserializeObject<DurationStayContext>(body.ToString());
+										Console.WriteLine(json);
+									}
+									break;
+									
 							}
 							
 							Console.WriteLine("---------END----------");
